@@ -40,6 +40,7 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <meta name="description" content="A Verticals demo site."></meta>
+        <meta name="test" content="Deployment testing."></meta>
         {headLinks.map((headLink) => (
           <link rel={headLink.rel} key={headLink.href} href={headLink.href} />
         ))}
