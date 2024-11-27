@@ -6,7 +6,7 @@
     "dev": "astro preview --port 3000 --host",
     "start": "astro preview --port 3000 --host",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --port 3000 --host",
     "astro": "astro",
     "next:build": "astro check && astro build",
     "next:dev": "astro preview --port 3000 --host",
