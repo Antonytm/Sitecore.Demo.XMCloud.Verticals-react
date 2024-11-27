@@ -7,7 +7,8 @@
     "start": "astro preview --port 3000 --host",
     "build": "astro check && astro build",
     "preview": "astro preview --port 3000 --host",
-    "astro": "astro"
+    "astro": "astro",
+    "next": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
