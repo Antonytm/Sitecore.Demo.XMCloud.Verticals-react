@@ -18,17 +18,9 @@ const reactConfig = {
   },
 };
 
-const angularConfig = {
-  vite: {
-    transformFilter: (code, id) => {
-      return !id.includes("/packages/astro-sitecore-jss/");
-    },
-  },
-};
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(reactConfig), vue(), angular(angularConfig)],
+  integrations: [react(reactConfig)],
   output: "server",
   adapter: node({
     mode: "standalone",

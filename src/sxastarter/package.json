@@ -9,17 +9,19 @@
     ]
   },
   "scripts": {
-    "dev": "astro preview --port 3000 --host",
-    "start": "astro preview --port 3000 --host",
-    "build": "astro build",
-    "preview": "astro preview --port 3000 --host",
+    "dev": "npm-run-all --serial bootstrap astro:dev",
+    "build": "npm-run-all --serial bootstrap astro:build",
+    "astro:dev": "astro dev --host",
+    "astro:build": "astro build",
+    "preview": "astro preview",
     "astro": "astro",
     "next:build": "astro build",
     "next:dev": "astro preview --port 3000 --host",
     "next:start": "astro preview --port 3000 --host",
     "start:connected": "astro preview --port 3000 --host",
     "start:production": "astro preview --port 3000 --host",
-    "start:watch-components": "astro preview --port 3000 --host"
+    "start:watch-components": "astro preview --port 3000 --host",
+    "bootstrap": "ts-node --project tsconfig.scripts.json scripts/bootstrap.ts"
   },
   "dependencies": {
     "@analogjs/astro-angular": "^1.7.0",
