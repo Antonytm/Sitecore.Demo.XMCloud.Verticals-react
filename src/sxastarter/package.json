@@ -8,12 +8,12 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "next:build": "build",
-    "next:dev": "start",
-    "next:start": "start",
-    "start:connected": "start",
-    "start:production": "start",
-    "start:watch-components": "start"
+    "next:build": "astro check && astro build",
+    "next:dev": "astro preview --port 3000 --host",
+    "next:start": "astro preview --port 3000 --host",
+    "start:connected": "astro preview --port 3000 --host",
+    "start:production": "astro preview --port 3000 --host",
+    "start:watch-components": "astro preview --port 3000 --host"
   },
   "dependencies": {
     "astro": "^4.16.15",
