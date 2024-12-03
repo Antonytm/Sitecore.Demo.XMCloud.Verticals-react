@@ -13,6 +13,7 @@ export type SitecoreContextValue = LayoutServiceContext & {
 
 try {
   const body = await Astro.request.json();
+  console.log(body);
   const path = body.args[0];
   const layoutData = JSON.parse(body.args[1]);
   const dictionary = JSON.parse(body.args[2]);
@@ -24,7 +25,7 @@ try {
   SitecoreContextMap.setKey("scContext", scContext);
   SitecoreContextMap.setKey("dictionary", dictionary);
 
-  const response = await fetch("http://localhost:4321/api/editing/page", {
+  const response = await fetch("http://localhost:3000/api/editing/page", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
