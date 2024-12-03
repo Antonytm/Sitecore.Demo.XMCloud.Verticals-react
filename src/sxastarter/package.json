@@ -26,6 +26,19 @@
     "@types/react-dom": "^18.3.1",
     "astro": "^4.16.15",
     "bootstrap": "^5.3.3",
-    "typescript": "^5.7.2"
+    "change-case": "^5.4.4",
+    "debug": "^4.3.7",
+    "graphql": "^16.9.0",
+    "graphql-request": "^7.1.2",
+    "http-proxy-middleware": "^3.0.3",
+    "nanostores": "^0.11.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rxjs": "^7.8.1",
+    "sharp": "^0.33.5",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "zone.js": "^0.15.0"
   }
 }
