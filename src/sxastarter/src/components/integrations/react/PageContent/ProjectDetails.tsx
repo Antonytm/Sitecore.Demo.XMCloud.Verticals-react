@@ -17,7 +17,6 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share';
-import { useI18n } from 'next-localization';
 
 interface Fields {
   Title: Field<string>;
@@ -36,7 +35,6 @@ export type ProjectDetailsProps = ComponentProps & {
 export const Default = (props: ProjectDetailsProps): JSX.Element => {
   const [currentUrl, setCurrentUrl] = useState('');
   const id = props.params?.RenderingIdentifier;
-  const { t } = useI18n();
 
   useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -59,7 +57,7 @@ export const Default = (props: ProjectDetailsProps): JSX.Element => {
           </div>
           <div className="col-12 col-lg-6 d-flex flex-column align-items-end justify-content-end gap-3 mt-3">
             <div>
-              <span className="eyebrow-accent me-2">{t('Client') || 'Client'}:</span>
+              <span className="eyebrow-accent me-2">{'Client'}:</span>
               <Image field={props.fields.Client} className="client-logo" />
             </div>
             <div>

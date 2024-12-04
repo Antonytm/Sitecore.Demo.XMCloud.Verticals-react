@@ -1,7 +1,7 @@
 import type { LayoutService, LayoutServiceData } from "@sitecore-jss/sitecore-jss/layout";
 import { layoutServiceFactory } from "../layout-service-factory";
 import { dictionaryServiceFactory } from "../dictionary-service-factory";
-import type { DictionaryService, DictionaryPhrases } from '@sitecore-jss/sitecore-jss/i18n';
+import { DictionaryService, DictionaryPhrases } from '@sitecore-jss/sitecore-jss/i18n';
 import config from "../../temp/config";
 
 export class SitecorePagePropsFactory {
@@ -24,14 +24,14 @@ export class SitecorePagePropsFactory {
     language?: string
   ): Promise<any> {
 
-    let layout: LayoutServiceData = await this.layoutService.fetchLayoutData(path, language || config.defaultLanguage);   
+    let layout: LayoutServiceData = await this.layoutService.fetchLayoutData(path, language || config.defaultLanguage);
     let dictionary: DictionaryPhrases = await this.dictionaryService.fetchDictionaryData(language || config.defaultLanguage);
 
     let props = {
       layoutData: layout,
-      dictionary: dictionary, 
+      dictionary: dictionary,
     };
-    
+
     return props;
   }
 }
