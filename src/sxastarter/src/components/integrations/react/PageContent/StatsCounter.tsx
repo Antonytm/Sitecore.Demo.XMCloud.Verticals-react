@@ -5,7 +5,7 @@ import {
   ImageField,
   Text,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { CountUp } from 'reactcomponents/NonSitecore/CountUp';
 import { DottedAccent } from 'reactcomponents/NonSitecore/DottedAccent';
 

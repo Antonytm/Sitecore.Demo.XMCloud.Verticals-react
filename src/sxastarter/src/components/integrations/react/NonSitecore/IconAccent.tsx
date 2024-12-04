@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageField, Image } from '@sitecore-jss/sitecore-jss-nextjs';
+import { ImageField, Image } from '@sitecore-jss/sitecore-jss-react';
 
 export const IconAccent = ({
   image,
@@ -14,3 +14,5 @@ export const IconAccent = ({
     </div>
   );
 };
+
+export default IconAccent;

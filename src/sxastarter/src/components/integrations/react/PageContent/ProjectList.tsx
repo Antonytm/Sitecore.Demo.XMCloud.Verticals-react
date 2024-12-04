@@ -8,8 +8,8 @@ import {
   Text,
   RichTextField,
   withDatasourceCheck,
-} from '@sitecore-jss/sitecore-jss-nextjs';
-import { Link } from '@sitecore-jss/sitecore-jss-react';
+} from '@sitecore-jss/sitecore-jss-react';
+// import { Link } from '@sitecore-jss/sitecore-jss-react';
 
 interface Fields {
   Title: Field<string>;
@@ -98,7 +98,7 @@ const ProjectFilters = ({
 
 const ProjectGridItem = ({ item }: { item: ProjectListItemProps }) => (
   <div className="project-grid-item">
-    <Link href={item.url} className="wrapper-link">
+    <a href={item.url} className="wrapper-link">
       <Image field={item.fields.Thumbnail} />
       <div className="project-grid-item-content">
         <span className="project-category">
@@ -108,7 +108,7 @@ const ProjectGridItem = ({ item }: { item: ProjectListItemProps }) => (
           <Text field={item.fields.Title} />
         </h3>
       </div>
-    </Link>
+    </a>
   </div>
 );
 
@@ -172,7 +172,5 @@ const ProjectListMosaic = (props: ProjectListComponentProps): JSX.Element => {
   );
 };
 
-export const Default = withDatasourceCheck()<ProjectListComponentProps>(ProjectListDefault);
-export const Mosaic = withDatasourceCheck()<ProjectListComponentProps>(ProjectListMosaic);
-
-export default Default;
+export default withDatasourceCheck()<ProjectListComponentProps>(ProjectListDefault);
+//export const Mosaic = withDatasourceCheck()<ProjectListComponentProps>(ProjectListMosaic);

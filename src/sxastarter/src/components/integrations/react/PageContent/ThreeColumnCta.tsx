@@ -6,7 +6,7 @@ import {
   Text,
   LinkField,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import useVisibility from 'src/hooks/useVisibility';
 import { Link } from '@sitecore-jss/sitecore-jss-react';
 

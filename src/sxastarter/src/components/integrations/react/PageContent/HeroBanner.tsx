@@ -8,7 +8,7 @@ import {
   useSitecoreContext,
   LinkField,
   Placeholder,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { ComponentProps } from 'lib/component-props';
 import { IconAccent } from 'reactcomponents/NonSitecore/IconAccent';
 import { DottedAccent } from 'reactcomponents/NonSitecore/DottedAccent';

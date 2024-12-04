@@ -86,4 +86,4 @@ const Breadcrumb = (props: BreadcrumbProps): JSX.Element => {
   );
 };
 
-export const Default = Breadcrumb;
+export default Breadcrumb;

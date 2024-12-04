@@ -1,4 +1,4 @@
-import { Placeholder } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Placeholder } from '@sitecore-jss/sitecore-jss-react';
 import { ComponentProps } from 'lib/component-props';
 import React from 'react';
 

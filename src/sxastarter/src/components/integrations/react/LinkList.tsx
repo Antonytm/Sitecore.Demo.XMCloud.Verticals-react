@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link as JssLink, Text, LinkField, TextField } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Text, LinkField, TextField } from '@sitecore-jss/sitecore-jss-react';
+import { Link as JssLink } from '@sitecore-jss/sitecore-jss-react';
 
 type ResultsFieldLink = {
   field: {

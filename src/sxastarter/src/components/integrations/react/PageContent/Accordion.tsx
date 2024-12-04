@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, Image, ImageField, RichText, Text } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field, Image, ImageField, RichText, Text } from '@sitecore-jss/sitecore-jss-react';
 
 interface AccordionItemFields {
   Icon: ImageField;
@@ -76,3 +76,5 @@ export const Default = (props: AccordionProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

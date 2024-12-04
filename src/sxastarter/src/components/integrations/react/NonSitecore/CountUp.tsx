@@ -63,3 +63,5 @@ export const CountUp = ({ value }: { value: number }): JSX.Element => {
 
   return <span ref={ref}>{count}</span>;
 };
+
+export default CountUp;

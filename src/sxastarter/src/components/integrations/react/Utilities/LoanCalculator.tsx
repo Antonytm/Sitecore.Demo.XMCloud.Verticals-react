@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { Field, Text } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field, Text } from '@sitecore-jss/sitecore-jss-react';
 import { useI18n } from 'next-localization';
 
 interface Fields {
@@ -251,3 +251,5 @@ export const Default = (props: LoanCalculatorProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

@@ -4,7 +4,7 @@ import {
   Text,
   LinkField,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { Link } from '@sitecore-jss/sitecore-jss-react';
 
 interface Fields {

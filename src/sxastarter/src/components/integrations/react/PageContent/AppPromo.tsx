@@ -6,7 +6,7 @@ import {
   RichTextField,
   Text,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { RichText } from '@sitecore-jss/sitecore-jss-react'
 import { useParallax } from 'react-scroll-parallax';
 

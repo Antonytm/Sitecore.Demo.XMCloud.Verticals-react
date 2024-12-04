@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, Image, ImageField, Text } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field, Image, ImageField, Text } from '@sitecore-jss/sitecore-jss-react';
 
 interface Fields {
   Title: Field<string>;

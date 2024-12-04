@@ -8,8 +8,8 @@ import {
   Text,
   RichTextField,
   withDatasourceCheck,
-} from '@sitecore-jss/sitecore-jss-nextjs';
-import {Link} from '@sitecore-jss/sitecore-jss-react'
+} from '@sitecore-jss/sitecore-jss-react';
+//import {Link} from '@sitecore-jss/sitecore-jss-react'
 //import { useI18n } from 'next-localization';
 
 interface Fields {
@@ -78,9 +78,9 @@ const ArticleListDefault = (props: ArticleListComponentProps): JSX.Element => {
                     <Text field={item.fields.Excerpt}></Text>
                   </p>
                   <div className="d-flex flex-wrap gap-3 justify-content-between align-items-center">
-                    <Link href={item.url} className="button button-secondary">
+                    <a href={item.url} className="button button-secondary">
                       {/* {t('Read more') || 'Read more'} */}
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

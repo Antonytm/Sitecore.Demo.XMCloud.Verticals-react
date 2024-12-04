@@ -7,7 +7,7 @@ import {
   Text,
   LinkField,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import { Link, RichText } from '@sitecore-jss/sitecore-jss-react';
 
@@ -92,3 +92,5 @@ export const Default = (props: ParallaxBannerProps) => {
     </div>
   );
 };
+
+export default Default;

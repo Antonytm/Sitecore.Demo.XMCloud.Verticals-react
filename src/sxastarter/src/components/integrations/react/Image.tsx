@@ -2,12 +2,12 @@ import {
   EditMode,
   Field,
   ImageField,
-  NextImage as JssImage,
+  Image as JssImage,
   Link as JssLink,
   LinkField,
   Text,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import React, { CSSProperties } from 'react';
 
 interface Fields {

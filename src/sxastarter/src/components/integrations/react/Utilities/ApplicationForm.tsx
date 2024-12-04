@@ -4,7 +4,7 @@ import {
   LinkField,
   RichTextField,
   Text,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { Link, RichText } from '@sitecore-jss/sitecore-jss-react';
 
 interface Fields {
@@ -68,3 +68,5 @@ export const Default = (props: ApplicationFormProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

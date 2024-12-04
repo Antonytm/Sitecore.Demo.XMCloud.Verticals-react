@@ -7,7 +7,7 @@ import {
   Text,
   useSitecoreContext,
   Placeholder,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { ComponentProps } from 'lib/component-props';
 import useVisibility from 'src/hooks/useVisibility';
 import { Link } from '@sitecore-jss/sitecore-jss-react';

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import {
   LinkField,
+  TextField
+} from '@sitecore-jss/sitecore-jss-react';
+import {
   Text,
-  TextField,
-  useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+  useSitecoreContext
+} from '@sitecore-jss/sitecore-jss-react';
 import { Link } from '@sitecore-jss/sitecore-jss-react'
 
 interface Fields {

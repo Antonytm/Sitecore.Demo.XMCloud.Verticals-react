@@ -8,7 +8,7 @@ import {
   ComponentParams,
   ComponentRendering,
   LinkField,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import {Link} from '@sitecore-jss/sitecore-jss-react'
 
 interface Fields {
@@ -94,3 +94,5 @@ const AuthorWidgetWithSocials = (props: AuthorWidgetProps): JSX.Element => {
 
 export const Default = withDatasourceCheck()<AuthorWidgetProps>(AuthorWidgetDefault);
 export const WithSocials = withDatasourceCheck()<AuthorWidgetProps>(AuthorWidgetWithSocials);
+
+export default Default;

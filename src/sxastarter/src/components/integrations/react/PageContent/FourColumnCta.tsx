@@ -6,7 +6,7 @@ import {
   Image,
   Text,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import useVisibility from 'src/hooks/useVisibility';
 import { Link } from '@sitecore-jss/sitecore-jss-react';
 
@@ -116,3 +116,5 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

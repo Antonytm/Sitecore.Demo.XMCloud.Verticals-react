@@ -605,3 +605,5 @@ export const DottedAccent = ({ className }: { className?: string }): JSX.Element
     </Parallax>
   );
 };
+
+export default DottedAccent;

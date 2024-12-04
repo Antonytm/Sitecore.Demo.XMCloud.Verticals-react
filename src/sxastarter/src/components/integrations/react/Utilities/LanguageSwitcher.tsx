@@ -1,13 +1,8 @@
-import { useSitecoreContext } from '@sitecore-jss/sitecore-jss-nextjs';
-import { Link } from '@sitecore-jss/sitecore-jss-react';
-import { useRouter } from 'next/router';
+import { useSitecoreContext } from '@sitecore-jss/sitecore-jss-react';
 import React, { useCallback, useMemo, useState } from 'react';
 
 export const Default = (): JSX.Element => {
-  const { sitecoreContext } = useSitecoreContext();
-
-  //const router = useRouter();
-  //const { pathname, asPath, query } = router;
+  const { sitecoreContext, updateSitecoreContext } = useSitecoreContext({ updatable: true });
 
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
@@ -20,24 +15,11 @@ export const Default = (): JSX.Element => {
     []
   );
 
-  // const changeLanguage = useCallback(
-  //   (langCode: string) => {
-  //     if (pathname && asPath && query) {
-  //       router.push(
-  //         {
-  //           pathname,
-  //           query,
-  //         },
-  //         asPath,
-  //         {
-  //           locale: langCode,
-  //           shallow: false,
-  //         }
-  //       );
-  //     }
-  //   },
-  //   [asPath, pathname, query, router]
-  // );
+  const changeLanguage = (langCode: string) => {
+    sitecoreContext.language = langCode;
+    updateSitecoreContext(sitecoreContext);
+    window.location.replace("/" + langCode);
+  };
 
   return (
     <div
@@ -59,12 +41,9 @@ export const Default = (): JSX.Element => {
       {showLanguageDropdown && (
         <div className="language-dropdown">
           {availableLanguages.map((lang) => (
-            <a href={"/"+lang.code} >
-              <span key={lang.code} onClick={() => window.location.replace("/"+lang.code)}>
+            <span key={lang.code} onClick={() => changeLanguage(lang.code)}>
               {lang.label}
-              {/* <Link href={lang.code}></Link> */}
             </span>
-            </a>
           ))}
         </div>
       )}

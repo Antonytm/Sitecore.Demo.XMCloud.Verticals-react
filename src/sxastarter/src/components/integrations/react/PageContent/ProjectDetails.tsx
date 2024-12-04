@@ -7,7 +7,7 @@ import {
   Image,
   RichText,
   RichTextField,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { ComponentProps } from 'lib/component-props';
 import {
   FacebookIcon,
@@ -108,3 +108,5 @@ export const Default = (props: ProjectDetailsProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

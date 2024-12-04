@@ -9,7 +9,7 @@ import {
   withDatasourceCheck,
   RichTextField,
   useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import {Link, RichText} from '@sitecore-jss/sitecore-jss-react'
 //import { useI18n } from 'next-localization';
 import { Swiper, SwiperSlide } from 'swiper/react';

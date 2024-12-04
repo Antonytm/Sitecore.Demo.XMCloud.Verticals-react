@@ -2,7 +2,7 @@ import {
   ComponentParams,
   ComponentRendering,
   Placeholder,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import React from 'react';
 import componentFactory from "temp/componentFactory";
 

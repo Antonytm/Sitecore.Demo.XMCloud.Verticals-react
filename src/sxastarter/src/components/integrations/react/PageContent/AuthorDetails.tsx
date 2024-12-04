@@ -7,7 +7,7 @@ import {
   Image,
   RichText,
   RichTextField,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { ComponentProps } from 'lib/component-props';
 import { ParallaxBackgroundImage } from 'reactcomponents/NonSitecore/ParallaxBackgroundImage';
 
@@ -98,3 +98,5 @@ export const Simple = (props: PageBackgroundProps): JSX.Element => {
     </div>
   );
 };
+
+export default Default;

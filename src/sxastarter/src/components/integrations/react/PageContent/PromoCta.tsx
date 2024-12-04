@@ -8,7 +8,7 @@ import {
   LinkField,
   useSitecoreContext,
   Placeholder,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+} from '@sitecore-jss/sitecore-jss-react';
 import { ParallaxBackgroundImage } from 'reactcomponents/NonSitecore/ParallaxBackgroundImage';
 import useVisibility from 'src/hooks/useVisibility';
 import { ComponentProps } from 'lib/component-props';
