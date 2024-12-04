@@ -17,6 +17,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share';
+import { withTranslation } from 'react-i18next';
 
 interface Fields {
   Title: Field<string>;
@@ -57,11 +58,11 @@ export const Default = (props: ProjectDetailsProps): JSX.Element => {
           </div>
           <div className="col-12 col-lg-6 d-flex flex-column align-items-end justify-content-end gap-3 mt-3">
             <div>
-              <span className="eyebrow-accent me-2">{'Client'}:</span>
+              <span className="eyebrow-accent me-2">{props.t('Client') || 'Client'}:</span>
               <Image field={props.fields.Client} className="client-logo" />
             </div>
             <div>
-              <span className="eyebrow-accent me-2">{t('Category') || 'Category'}:</span>
+              <span className="eyebrow-accent me-2">{props.t('Category') || 'Category'}:</span>
               <Text field={props.fields.Category} />
             </div>
           </div>
@@ -88,7 +89,7 @@ export const Default = (props: ProjectDetailsProps): JSX.Element => {
               </div>
             </div>
             <div className="col-12 d-flex gap-2 align-items-center justify-content-end mb-5">
-              <h6 className="eyebrow-accent mb-0 me-2">{t('Share on') || 'Share on'}</h6>
+              <h6 className="eyebrow-accent mb-0 me-2">{props.t('Share on') || 'Share on'}</h6>
               <FacebookShareButton url={currentUrl}>
                 <FacebookIcon round size={48} bgStyle={{ fill: 'var(--bg-accent)' }} />
               </FacebookShareButton>
@@ -107,4 +108,4 @@ export const Default = (props: ProjectDetailsProps): JSX.Element => {
   );
 };
 
-export default Default;
+export default withTranslation()(Default);

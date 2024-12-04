@@ -7,5 +7,6 @@ config.graphQLEndpoint = import.meta.env.GRAPH_QL_ENDPOINT || 'https://xmcloudcm
 config.rootItemId = import.meta.env.ROOT_ITEM_ID || '{A13C890B-43EA-45E2-8BAD-A8838112B83D}';
 config.defaultLanguage = import.meta.env.DEFAULT_LANGUAGE || 'en';
 config.fetchWith = import.meta.env.FETCH_WITH || 'GraphQL';
-config.jssAppName = import.meta.env.JSS_APP_NAME || 'services';
+config.publicUrl = import.meta.env.PUBLIC_URL || 'services.sxastarter.localhost';
+config.jssAppName = import.meta.env.JSS_APP_NAME || 'Services';
 export default config;

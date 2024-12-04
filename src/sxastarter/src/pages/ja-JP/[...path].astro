@@ -25,7 +25,7 @@ export type SitecoreContextValue = LayoutServiceContext & {
 const { path } = Astro.params;
 
 let sitecorePagePropsFactory = new SitecorePagePropsFactory();
-const pageProps = await sitecorePagePropsFactory.create(path ?? "/", config.defaultLanguage);
+const pageProps = await sitecorePagePropsFactory.create(path ?? "/", Astro.currentLocale);
 
 let scContext = pageProps.layoutData.sitecore.context as SitecoreContextValue;
 scContext.route = pageProps.layoutData.sitecore.route;

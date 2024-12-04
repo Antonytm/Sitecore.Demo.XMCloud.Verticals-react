@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { Field, Text } from '@sitecore-jss/sitecore-jss-react';
+import { withTranslation } from 'react-i18next';
 
 interface Fields {
   BankFee: Field<number>;
@@ -65,7 +66,7 @@ export const Default = (props: LoanCalculatorProps): JSX.Element => {
       <div className="loan-calculator-input-group">
         <div className="row justify-content-between">
           <div className="col-auto">
-            <label htmlFor="loan-amount">{'Amount'}</label>
+            <label htmlFor="loan-amount">{t('Amount') || 'Amount'}</label>
           </div>
           <div className="col-auto">
             <div className="loan-calculator-input-wrapper">
@@ -135,7 +136,7 @@ export const Default = (props: LoanCalculatorProps): JSX.Element => {
       <div className="loan-calculator-input-group">
         <div className="row justify-content-between">
           <div className="col-auto">
-            <label htmlFor="loan-amount">{t('Term of repayment') || 'Term of repayment'}</label>
+            <label htmlFor="loan-amount">{props.t('Term of repayment') || 'Term of repayment'}</label>
           </div>
           <div className="col-auto">
             <div className="loan-calculator-input-wrapper">
@@ -250,4 +251,4 @@ export const Default = (props: LoanCalculatorProps): JSX.Element => {
   );
 };
 
-export default Default;
+export default withTranslation(Default);

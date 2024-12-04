@@ -9,7 +9,6 @@ import ApplicationForm from '@/components/integrations/react/Utilities/Applicati
 import Title from '@/components/integrations/react/Title.tsx';
 import RowSplitter from '@/components/integrations/react/RowSplitter.tsx';
 import RichText from '@/components/integrations/react/RichText.tsx';
-import ReactPlaceholder from '@/components/integrations/react/ReactPlaceholder.tsx';
 import Promo from '@/components/integrations/react/Promo.tsx';
 import PartialDesignDynamicPlaceholder from '@/components/integrations/react/PartialDesignDynamicPlaceholder.tsx';
 import TwoColumnCta from '@/components/integrations/react/PageContent/TwoColumnCta.tsx';
@@ -66,7 +65,6 @@ components.set('ApplicationForm', ApplicationForm);
 components.set('Title', Title);
 components.set('RowSplitter', RowSplitter);
 components.set('RichText', RichText);
-components.set('ReactPlaceholder', ReactPlaceholder);
 components.set('Promo', Promo);
 components.set('PartialDesignDynamicPlaceholder', PartialDesignDynamicPlaceholder);
 components.set('TwoColumnCta', TwoColumnCta);
