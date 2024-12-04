@@ -9,12 +9,12 @@
     ]
   },
   "scripts": {
-    "dev": "npm-run-all --serial bootstrap astro:dev",
-    "build": "npm-run-all --serial bootstrap astro:build",
-    "astro:dev": "astro dev --host",
-    "astro:build": "astro build",
-    "preview": "astro preview",
+    "dev": "astro dev --port 3000 --host",
+    "start": "astro dev --port 3000 --host",
+    "build": "astro build",
+    "preview": "astro preview --port 3000 --host",
     "astro": "astro",
+    "next": "astro",
     "bootstrap": "ts-node --project tsconfig.scripts.json scripts/bootstrap.ts"
   },
   "dependencies": {
