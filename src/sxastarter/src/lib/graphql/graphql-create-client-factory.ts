@@ -20,13 +20,13 @@ export const getEdgeProxyContentUrl = (
 export const createGraphQLClientFactory = () => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
 
-  if (config.graphQLEndpoint && config.sitecoreApiKey) {
-    if (config.sitecoreEdgeContextId) {
-      clientConfig = {
-        endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
-      };
-    }
-    else {
+  if (config.sitecoreEdgeContextId) {
+    clientConfig = {
+      endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
+    };
+  }
+  else if (config.graphQLEndpoint && config.sitecoreApiKey) {
+    {
       clientConfig = {
         endpoint: config.graphQLEndpoint,
         apiKey: config.sitecoreApiKey,
