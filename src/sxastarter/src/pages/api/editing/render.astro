@@ -13,10 +13,7 @@ export type SitecoreContextValue = LayoutServiceContext & {
 
 try {
   const body = await Astro.request.json();
-  console.log("body");
-  console.log(body);
-  const html = `<html><body>${JSON.stringify(body)}</body</html>`;
-  return new Response(JSON.stringify({ html: html }), { status: 200 });
+
   const path = body.args[0];
   const layoutData = JSON.parse(body.args[1]);
   const dictionary = JSON.parse(body.args[2]);
