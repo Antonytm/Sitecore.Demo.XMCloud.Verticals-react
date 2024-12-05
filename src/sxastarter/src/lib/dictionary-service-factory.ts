@@ -4,6 +4,7 @@ import type { DictionaryService } from '@sitecore-jss/sitecore-jss/i18n';
 import jss from '@sitecore-jss/sitecore-jss';
 import config from '../temp/config';
 import { GraphQLRequestClient } from '@sitecore-jss/sitecore-jss-react';
+import { createGraphQLClientFactory } from './graphql/graphql-create-client-factory';
 
 const { RestDictionaryService, GraphQLDictionaryService} = jssI18n;
 const { constants } = jss;
@@ -14,10 +15,8 @@ const { constants } = jss;
 export class DictionaryServiceFactory {  
   create(): DictionaryService {
     if(import.meta.env.FETCH_WITH === constants.FETCH_WITH.GRAPHQL){
-      const clientFactory = GraphQLRequestClient.createClientFactory({
-        endpoint: config.graphQLEndpoint,
-        apiKey: config.sitecoreApiKey
-      });
+      const clientFactory = createGraphQLClientFactory();
+      
       return new GraphQLDictionaryService({
         siteName: config.sitecoreSiteName,
         /*
