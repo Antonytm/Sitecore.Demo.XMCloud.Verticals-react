@@ -18,7 +18,7 @@ export class DictionaryServiceFactory {
       const clientFactory = createGraphQLClientFactory();
       
       return new GraphQLDictionaryService({
-        siteName: config.sitecoreSiteName,
+        siteName: config.jssAppName || config.sitecoreSiteName,
         /*
           The Dictionary Service needs a root item ID in order to fetch dictionary phrases for the current
           app. If your Sitecore instance only has 1 JSS App, you can specify the root item ID here;
