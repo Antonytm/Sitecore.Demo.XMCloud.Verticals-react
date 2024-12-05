@@ -18,9 +18,6 @@ export const getEdgeProxyContentUrl = (
 
 
 export const createGraphQLClientFactory = () => {
-  console.log('config', config);
-  
-
   let clientConfig: GraphQLRequestClientFactoryConfig;
   if (config.sitecoreEdgeContextId) {
     clientConfig = {
