@@ -21,9 +21,11 @@ export const createGraphQLClientFactory = () => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
   console.log('config', config);
   if (config.sitecoreEdgeContextId) {
+    console.log('config.sitecoreEdgeContextId', config.sitecoreEdgeContextId);
     clientConfig = {
       endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
     };
+    console.log('clientConfig', clientConfig);
   }
   else if (config.graphQLEndpoint && config.sitecoreApiKey) {
     {
