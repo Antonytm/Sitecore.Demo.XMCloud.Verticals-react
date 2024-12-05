@@ -3,7 +3,6 @@ import { createGraphQLClientFactory } from "./graphql-create-client-factory";
 
 export default class GraphQLRequestClientFactory {
   create(debug: Debugger) {
-
-    return createGraphQLClientFactory();
+    return createGraphQLClientFactory()();
   }
 }
