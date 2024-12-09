@@ -11,16 +11,17 @@ export const multisite = defineMiddleware((context: any, next) => {
   }
   if (config.sites) {
     const sites = JSON.parse(config.sites);
+    const url = new URL(context.request.url);
     for (const site of sites) {
       console.log("compare site names");
       console.log(site.name);
       console.log(context.request.url);
       console.log(site.hostName);
       if (context.request.url.indexOf(site.hostName) > 0) {
-        const url = `/${sitePrefixIdentifier}${context.request.url.pathname}`;
+        const rewrite = `/${sitePrefixIdentifier}${site.name}/${url.pathname}`;
         console.log("new url");
-        console.log(url);
-        return context.rewrite(new Request(url));
+        console.log(rewrite);
+        return context.rewrite(new Request(rewrite));
       }
     }
   }
