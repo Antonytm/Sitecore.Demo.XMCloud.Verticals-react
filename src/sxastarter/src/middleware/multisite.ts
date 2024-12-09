@@ -19,6 +19,7 @@ export const multisite = defineMiddleware((context: any, next) => {
       console.log(site.hostName);
       if (context.request.url.indexOf(site.hostName) > 0) {
         const rewrite = `${url.protocol}//${url.host}/${sitePrefixIdentifier}${site.name}${url.pathname}`;
+        return next(rewrite);
         console.log("new url");
         console.log(rewrite);
         return context.rewrite(new Request(rewrite));
