@@ -12,11 +12,11 @@ export const multisite = defineMiddleware((context: any, next) => {
   if (config.sites) {
     const sites = JSON.parse(config.sites);
     for (const site of sites) {
-      console.log("compoare site names");
+      console.log("compare site names");
       console.log(site.name);
       console.log(context.request.url);
-      console.log(context.request.url.hostname)
-      if (site.hostName === context.request.url.hostname) {
+      console.log(site.hostName);
+      if (context.request.url.indexOf(site.hostName) > 0) {
         const url = `/${sitePrefixIdentifier}${context.request.url.pathname}`;
         console.log("new url");
         console.log(url);
