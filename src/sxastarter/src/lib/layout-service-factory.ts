@@ -5,16 +5,17 @@ import clientFactory from './graphql/graphql-create-client-factory';
 const { RestLayoutService, GraphQLLayoutService } = jss;
 
 export class LayoutServiceFactory {
-  create(): LayoutService {
+  
+  create(sitename?: string): LayoutService {
     return config.fetchWith === 'GraphQL'
       ? new GraphQLLayoutService({
         clientFactory,
-        siteName: config.jssAppName || config.sitecoreSiteName,
+        siteName: sitename || config.jssAppName || config.sitecoreSiteName,
       })
       : new RestLayoutService({
         apiHost: config.sitecoreApiHost,
         apiKey: config.sitecoreApiKey,
-        siteName: config.jssAppName || config.sitecoreSiteName,
+        siteName: sitename || config.jssAppName || config.sitecoreSiteName,
         configurationName: 'sxa-jss',
       });
   }

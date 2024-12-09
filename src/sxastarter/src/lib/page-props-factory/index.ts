@@ -9,9 +9,9 @@ export class SitecorePagePropsFactory {
   private layoutService: LayoutService;
   private dictionaryService: DictionaryService;
 
-  constructor() {
+  constructor(sitename?: string) {
     this.dictionaryService = dictionaryServiceFactory.create();
-    this.layoutService = layoutServiceFactory.create();
+    this.layoutService = layoutServiceFactory.create(sitename);
   }
   
   /**

@@ -9,6 +9,7 @@ import type {
 } from "@sitecore-jss/sitecore-jss/layout";
 import config from "../temp/config";
 import GraphQLRequestClientFactory from "../lib/graphql/graphql-request-client-factory";
+import { sitePrefixIdentifier } from "@/lib/constants";
 
 export const prerender = true;
 
@@ -16,13 +17,34 @@ export async function getStaticPaths() {
   try {
     const graphQlRequestSitemapFactory = new GraphQLRequestClientFactory();
     const sitemapService = new SitemapService(graphQlRequestSitemapFactory);
-    const staticPaths: StaticPath[] = await sitemapService.getStaticSitemap(
-      config.defaultLanguage
-    );
+    let staticPaths: StaticPath[] = [];
+    if (config.sites) {
+      const sites = JSON.parse(config.sites);
+      for (const site of sites) {
+        const sitePrefix = `${sitePrefixIdentifier}${site.name}`;
+        const languagePrefix = config.defaultLanguage;
+        const paths = await sitemapService
+          .getStaticSitemap(config.defaultLanguage, site.name)
+          .then((value) => {
+            return value.map((x) => {
+              x.params.path = `/${sitePrefix}/${languagePrefix}/${x.params.path ?? ""}`;
+              return x;
+            });
+          });
+        staticPaths.push(...paths);
+      }
+    } else {
+      const paths = await sitemapService.getStaticSitemap(
+        config.defaultLanguage
+      );
+      staticPaths.push(...paths);
+    }
+
     return staticPaths;
   } catch (error) {
     console.error(error);
   }
+
   return [];
 }
 
@@ -37,10 +59,29 @@ let pageProps = {
 
 try {
   const { path } = Astro.params;
+  let site = config.sitecoreSiteName;
+  let language = config.defaultLanguage;
+  let cleanPath = path ?? "/";
+  console.log(cleanPath);
+  if (path) {
+    const parts = path.split("/");
+    if (parts[0].indexOf(sitePrefixIdentifier) === 0) {
+      site = parts[0].replace(sitePrefixIdentifier, "");
+      cleanPath = path.replace(`${parts[0]}/`, "");
+    }
+    if (parts[1]) {
+      language = parts[1];
+      cleanPath = cleanPath.replace(`${parts[1]}`, "") ?? "/";
+    }
+  }
 
-  let sitecorePagePropsFactory = new SitecorePagePropsFactory();
+  Astro.locals.site = site;
+
+  let sitecorePagePropsFactory = new SitecorePagePropsFactory(
+    Astro.locals.site || config.sitecoreSiteName
+  );
   pageProps = await sitecorePagePropsFactory.create(
-    path ?? "/",
+    cleanPath,
     config.defaultLanguage
   );
 
