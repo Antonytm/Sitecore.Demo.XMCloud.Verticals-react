@@ -25,9 +25,8 @@ export async function getStaticPaths() {
         const sitePrefix = `${sitePrefixIdentifier}${site.name}`;
         
         for (const language of languages) {
-          console.log(language);
           const paths = await sitemapService
-            .getStaticSitemap(language, site.name)
+            .getStaticSitemap(config.defaultLanguage, site.name)
             .then((value) => {
               return value.map((x) => {
                 x.params.path = `/${sitePrefix}/${language}/${x.params.path ?? ""}`;

@@ -26,8 +26,10 @@ function generateConfig(defaultConfig: JssConfig): void {
   jssConfigGenerator
     .generateConfig(defaultConfig)
     .then(config => {
-      writeConfig(config)
-      writeConfigVercel(config);
+      writeConfig(config);
+      if (process.env.VERCEL) {
+        writeConfigVercel(config);
+      }
     })
     .catch(e => {
       console.error("Config generation error");
@@ -58,6 +60,5 @@ function writeConfigVercel(config: JssConfig): void {
   configText += `config.sites = ${JSON.stringify(sites)};\n`;
   configText += "export default config;";
   console.log(`Write configuration to '${VERCEL_CONFIG_PATH}'.`);
-  console.log(fs.readFileSync(VERCEL_CONFIG_PATH, { encoding: "utf-8" }));
 }
 
