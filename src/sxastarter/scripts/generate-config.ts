@@ -60,5 +60,6 @@ function writeConfigVercel(config: JssConfig): void {
   configText += `config.sites = ${JSON.stringify(sites)};\n`;
   configText += "export default config;";
   console.log(`Write configuration to '${VERCEL_CONFIG_PATH}'.`);
+  fs.writeFileSync(VERCEL_CONFIG_PATH, configText, { encoding: "utf-8" });
 }
 
