@@ -23,6 +23,7 @@ let pageProps = {
 };
 
 try {
+  console.log(config);
   const { path } = Astro.params;
   let site = config.sitecoreSiteName;
   let language = config.defaultLanguage;
