@@ -18,17 +18,3 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "58e6a155-c68d-463c-8d41-98d113eededb"
-- Language: "fr-CA"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "baaa00c1-ea5e-42e4-a813-d0acbfd78440"
-- Language: "ja-JP"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "85106f2a-a4af-4629-8532-f5f0e68a34bb"
