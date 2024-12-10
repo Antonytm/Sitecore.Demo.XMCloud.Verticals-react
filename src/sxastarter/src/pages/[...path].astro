@@ -29,7 +29,7 @@ export async function getStaticPaths() {
             .getStaticSitemap(language, site.name)
             .then((value) => {
               return value.map((x) => {
-                x.params.path = `/${sitePrefix}/${language}/${x.params.path ?? ""}`;
+                x.params.path = `/${sitePrefix}/${language}/${x.params.path ?? ""}`.toLowerCase();
                 return x;
               });
             });
@@ -65,7 +65,6 @@ try {
   let site = config.sitecoreSiteName;
   let language = config.defaultLanguage;
   let cleanPath = path ?? "/";
-  console.log(cleanPath);
   if (path) {
     const parts = path.split("/");
     if (parts[0].indexOf(sitePrefixIdentifier) === 0) {
@@ -83,10 +82,7 @@ try {
   let sitecorePagePropsFactory = new SitecorePagePropsFactory(
     Astro.locals.site || config.sitecoreSiteName
   );
-  pageProps = await sitecorePagePropsFactory.create(
-    cleanPath,
-    language,
-  );
+  pageProps = await sitecorePagePropsFactory.create(cleanPath, language);
 
   let scContext = pageProps.layoutData.sitecore.context as SitecoreContextValue;
   scContext.route = pageProps.layoutData.sitecore.route;
