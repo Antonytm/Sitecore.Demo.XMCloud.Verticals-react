@@ -32,10 +32,8 @@ export default function middleware(request: Request) {
 
       // https://github.com/Sitecore/Sitecore.Demo.XMCloud.Verticals/issues/251
       // Temporary fix for the issue above
-      const hostname = (site.hostName.indexOf("-basic") > -1)
-        ? site.hostName
-        : site.hostName.replace("-basic", "-website");
-
+      const hostname = site.hostName.replace("-basic", "-website");
+      
       console.log("VERCEL EDGE MIDDLEWARE HOSTNAME", hostname);
       console.log("VERCEL EDGE MIDDLEWARE URL HOST", url.host);
       console.log("VERCEL EDGE MIDDLEWARE URL HOST STARTS WITH HOSTNAME", url.host.startsWith(hostname));
