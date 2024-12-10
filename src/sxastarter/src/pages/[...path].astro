@@ -10,6 +10,7 @@ import type {
 import config from "../temp/config";
 import GraphQLRequestClientFactory from "../lib/graphql/graphql-request-client-factory";
 import { sitePrefixIdentifier } from "@/lib/constants";
+import { languages } from "./../lib/languages";
 
 export const prerender = true;
 
@@ -22,7 +23,19 @@ export async function getStaticPaths() {
       const sites = JSON.parse(config.sites);
       for (const site of sites) {
         const sitePrefix = `${sitePrefixIdentifier}${site.name}`;
-        const languagePrefix = config.defaultLanguage;
+        
+        for (const language of languages) {
+          const languagePrefix = language;  
+          const paths = await sitemapService
+            .getStaticSitemap(language, site.name)
+            .then((value) => {
+              return value.map((x) => {
+                x.params.path = `/${sitePrefix}/${languagePrefix}/${x.params.path ?? ""}`;
+                return x;
+              });
+            });
+          staticPaths.push(...paths);
+        }
         const paths = await sitemapService
           .getStaticSitemap(config.defaultLanguage, site.name)
           .then((value) => {

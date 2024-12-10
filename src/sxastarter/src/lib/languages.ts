@@ -1,1 +1,1 @@
-export const $languages = ["en"]
+export const languages = ["en", "fr_CA", "ja_JP"];
