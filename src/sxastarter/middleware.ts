@@ -12,7 +12,7 @@ export default function middleware(request: Request) {
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
-    console.log("config", JSON.stringify(config));
+    console.log("config.sites", JSON.stringify(config.sites));
     const sites = config.sites;
     const url = new URL(request.url);
     for (const site of sites) {
