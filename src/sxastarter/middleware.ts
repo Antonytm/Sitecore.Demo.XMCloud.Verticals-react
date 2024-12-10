@@ -1,5 +1,5 @@
 import { rewrite } from '@vercel/edge';
-import config from "@/temp/config";
+import config from "./src/temp/config.js";
 
 export default function middleware(request: Request) {
   console.log(request);
