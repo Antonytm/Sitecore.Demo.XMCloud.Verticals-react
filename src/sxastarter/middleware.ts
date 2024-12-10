@@ -10,7 +10,12 @@ export default function middleware(request: Request) {
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
-    const sites = config.sites;
+    const sites = [...config.sites, {
+      "name": "Basic",
+      "language": "en",
+      "hostName": "deployment",
+    }];
+    
     for (const site of sites) {
 
       let path = url.pathname;
@@ -33,7 +38,7 @@ export default function middleware(request: Request) {
       // https://github.com/Sitecore/Sitecore.Demo.XMCloud.Verticals/issues/251
       // Temporary fix for the issue above
       const hostname = site.hostName.replace("-basic", "-website");
-      
+
       console.log("VERCEL EDGE MIDDLEWARE HOSTNAME", hostname);
       console.log("VERCEL EDGE MIDDLEWARE URL HOST", url.host);
       console.log("VERCEL EDGE MIDDLEWARE URL HOST STARTS WITH HOSTNAME", url.host.startsWith(hostname));
