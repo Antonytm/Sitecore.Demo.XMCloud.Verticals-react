@@ -27,9 +27,7 @@ function generateConfig(defaultConfig: JssConfig): void {
     .generateConfig(defaultConfig)
     .then(config => {
       writeConfig(config)
-      if (process.env.VERCEL) {
-        writeConfigVercel(config);
-      }
+      writeConfigVercel(config);
     })
     .catch(e => {
       console.error("Config generation error");
