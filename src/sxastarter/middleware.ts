@@ -1,4 +1,5 @@
 import { rewrite } from '@vercel/edge';
+import config from "./src/temp/config.vercel";
 
 export default function middleware(request: Request) {
   console.log(request);
@@ -12,8 +13,8 @@ export default function middleware(request: Request) {
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
-    if (true) {
-      const sites = [{"name":"Basic","hostName":"deployment-4nu2c4veudc0r9aare0a-basic.vercel.app","language":"en"},{"name":"Financial","hostName":"deployment-4nu2c4veudc0r9aare0a-financial.vercel.app","language":"en"},{"name":"Services","hostName":"deployment-4nu2c4veudc0r9aare0a-services.vercel.app","language":"en"}];
+    if (config?.sites) {
+      const sites = config.sites;
       const url = new URL(request.url);
       for (const site of sites) {
         if (request.url.indexOf(site.hostName) > 0) {
