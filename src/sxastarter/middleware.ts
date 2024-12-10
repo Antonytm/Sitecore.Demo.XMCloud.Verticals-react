@@ -1,6 +1,6 @@
 import { rewrite } from '@vercel/edge';
 import config from './src/temp/config.vercel.js';
-import { languages } from './src/lib/languages.ts';
+import { languages } from './src/lib/languages.js';
 
 export default function middleware(request: Request) {
   const url = new URL(request.url);
