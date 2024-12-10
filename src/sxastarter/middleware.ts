@@ -3,7 +3,7 @@ import config from './src/temp/config.vercel.js';
 import { languages } from './src/lib/languages.js';
 
 export default function middleware(request: Request) {
-  const url = new URL(request.url);
+  const url = new URL(request.url.toLowerCase());
 
   console.log("VERCEL EDGE MIDDLEWARE");
   if (request.url.indexOf(".js") === -1
@@ -18,7 +18,7 @@ export default function middleware(request: Request) {
 
       let hasLanguage = false;
       for (const language of languages) {
-        if (url.pathname.startsWith("/" + language)) {
+        if (url.pathname.startsWith("/" + language.toLocaleLowerCase())) {
           hasLanguage = true;
         }
       }
