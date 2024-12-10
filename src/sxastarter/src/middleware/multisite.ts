@@ -1,8 +1,11 @@
+/**
+ * @type {import("astro").MiddlewareHandler}
+ */
 import { sitePrefixIdentifier } from "@/lib/constants";
 import config from "@/temp/config";
 import { defineMiddleware } from "astro/middleware";
 
-export const multisite = defineMiddleware((context: any, next) => {
+export const multisite = defineMiddleware((context, next) => {
   console.log("-----------------");
   console.log(context.request);
   console.log("-----------------");
