@@ -11,42 +11,7 @@ import config from "../temp/config";
 import GraphQLRequestClientFactory from "../lib/graphql/graphql-request-client-factory";
 import { sitePrefixIdentifier } from "@/lib/constants";
 
-export const prerender = true;
-
-export async function getStaticPaths() {
-  try {
-    const graphQlRequestSitemapFactory = new GraphQLRequestClientFactory();
-    const sitemapService = new SitemapService(graphQlRequestSitemapFactory);
-    let staticPaths: StaticPath[] = [];
-    if (config.sites) {
-      const sites = JSON.parse(config.sites);
-      for (const site of sites) {
-        const sitePrefix = `${sitePrefixIdentifier}${site.name}`;
-        const languagePrefix = config.defaultLanguage;
-        const paths = await sitemapService
-          .getStaticSitemap(config.defaultLanguage, site.name)
-          .then((value) => {
-            return value.map((x) => {
-              x.params.path = `/${sitePrefix}/${languagePrefix}/${x.params.path ?? ""}`;
-              return x;
-            });
-          });
-        staticPaths.push(...paths);
-      }
-    } else {
-      const paths = await sitemapService.getStaticSitemap(
-        config.defaultLanguage
-      );
-      staticPaths.push(...paths);
-    }
-
-    return staticPaths;
-  } catch (error) {
-    console.error(error);
-  }
-
-  return [];
-}
+export const prerender = false;
 
 export type SitecoreContextValue = LayoutServiceContext & {
   itemId?: string;
