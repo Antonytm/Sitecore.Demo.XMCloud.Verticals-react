@@ -25,26 +25,18 @@ export async function getStaticPaths() {
         const sitePrefix = `${sitePrefixIdentifier}${site.name}`;
         
         for (const language of languages) {
-          const languagePrefix = language;  
+          console.log(language);
           const paths = await sitemapService
             .getStaticSitemap(language, site.name)
             .then((value) => {
               return value.map((x) => {
-                x.params.path = `/${sitePrefix}/${languagePrefix}/${x.params.path ?? ""}`;
+                x.params.path = `/${sitePrefix}/${language}/${x.params.path ?? ""}`;
                 return x;
               });
             });
-          staticPaths.push(...paths);
+            console.log(paths);
+          //staticPaths.push(...paths);
         }
-        const paths = await sitemapService
-          .getStaticSitemap(config.defaultLanguage, site.name)
-          .then((value) => {
-            return value.map((x) => {
-              x.params.path = `/${sitePrefix}/${languagePrefix}/${x.params.path ?? ""}`;
-              return x;
-            });
-          });
-        staticPaths.push(...paths);
       }
     } else {
       const paths = await sitemapService.getStaticSitemap(
