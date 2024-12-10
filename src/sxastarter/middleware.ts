@@ -12,14 +12,12 @@ export default function middleware(request: Request) {
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
-      console.log("config", config);
-    if (config?.sites) {
-      const sites = config.sites;
-      const url = new URL(request.url);
-      for (const site of sites) {
-        if (request.url.indexOf(site.hostName) > 0) {
-          return rewrite(request.url.replace(site.hostName, site.hostName + "/site_" + site.name));
-        }
+    console.log("config", JSON.stringify(config));
+    const sites = config.sites;
+    const url = new URL(request.url);
+    for (const site of sites) {
+      if (request.url.indexOf(site.hostName) > 0) {
+        return rewrite(request.url.replace(site.hostName, site.hostName + "/site_" + site.name));
       }
     }
   }
