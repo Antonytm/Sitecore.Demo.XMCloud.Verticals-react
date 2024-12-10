@@ -10,7 +10,7 @@ import type {
 import config from "../temp/config";
 import GraphQLRequestClientFactory from "../lib/graphql/graphql-request-client-factory";
 import { sitePrefixIdentifier } from "@/lib/constants";
-import { languages } from "./../lib/languages";
+import { languages } from "../lib/languages";
 
 export const prerender = true;
 
@@ -85,7 +85,7 @@ try {
   );
   pageProps = await sitecorePagePropsFactory.create(
     cleanPath,
-    config.defaultLanguage
+    language,
   );
 
   let scContext = pageProps.layoutData.sitecore.context as SitecoreContextValue;
