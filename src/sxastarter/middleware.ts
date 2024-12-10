@@ -3,16 +3,16 @@ import config from "./src/temp/config.vercel";
 
 export default function middleware(request: Request) {
   console.log(request);
-  console.log(request.url);
-  console.log(new URL(request.url));
-  console.log(new URL(request.url).host);
-  console.log(new URL(request.url).pathname);
+  const url = new URL(request.url);
+  console.log(url.host);
+  console.log(url.pathname);
 
   console.log("VERCEL EDGE MIDDLEWARE");
   if (request.url.indexOf(".js") === -1
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
+      console.log("config", config);
     if (config?.sites) {
       const sites = config.sites;
       const url = new URL(request.url);
