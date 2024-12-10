@@ -17,8 +17,11 @@ export default function middleware(request: Request) {
 
 
       let hasLanguage = false;
+      console.log("VERCEL EDGE MIDDLEWARE LANGUAGE", languages);
       for (const language of languages) {
+        console.log("VERCEL EDGE MIDDLEWARE LANGUAGE", language);
         if (url.pathname.startsWith("/" + language.toLocaleLowerCase())) {
+          console.log("VERCEL EDGE MIDDLEWARE HAS LANGUAGE", language);
           hasLanguage = true;
         }
       }
@@ -32,6 +35,10 @@ export default function middleware(request: Request) {
       const hostname = (site.hostName.indexOf("-basic") > -1)
         ? site.hostName
         : site.hostName.replace("-basic", "-website");
+
+      console.log("VERCEL EDGE MIDDLEWARE HOSTNAME", hostname);
+      console.log("VERCEL EDGE MIDDLEWARE URL HOST", url.host);
+      console.log("VERCEL EDGE MIDDLEWARE URL HOST STARTS WITH HOSTNAME", url.host.startsWith(hostname));
 
       if (url.host.startsWith(hostname)) {
         path = `/site_${site.name}${path}`;
