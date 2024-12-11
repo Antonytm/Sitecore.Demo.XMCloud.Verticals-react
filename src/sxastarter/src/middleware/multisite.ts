@@ -16,7 +16,7 @@ export const multisite = defineMiddleware((context, next) => {
     && request.url.indexOf(".css") === -1
     && request.url.indexOf(".ico") === -1
     && request.url.indexOf("site_") === -1) {
-    const sites = [...config.sites, {
+    const sites = [...JSON.parse(config.sites), {
       "name": "Basic",
       "language": "en",
       "hostName": "deployment",
