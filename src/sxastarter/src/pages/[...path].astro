@@ -64,6 +64,10 @@ let pageProps = {
 };
 
 try {
+  console.log("Config", config);
+  console.log(config.sitecoreEdgeContextId);
+  console.log(config.sitecoreEdgeUrl);
+
   const { path } = Astro.params;
   let site = config.sitecoreSiteName;
   let language = config.defaultLanguage;
