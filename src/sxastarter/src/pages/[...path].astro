@@ -72,17 +72,23 @@ try {
   let site = config.sitecoreSiteName;
   let language = config.defaultLanguage;
   let cleanPath = path ?? "/";
+  console.log("Path", path);
   if (path) {
     const parts = path.split("/");
     if (parts[0].indexOf(sitePrefixIdentifier) === 0) {
       site = parts[0].replace(sitePrefixIdentifier, "");
       cleanPath = path.replace(`${parts[0]}/`, "");
     }
+
     if (parts[1]) {
       language = parts[1];
       cleanPath = cleanPath.replace(`${parts[1]}`, "") ?? "/";
     }
   }
+
+  console.log("Site", site);
+  console.log("CleanPath", cleanPath);
+  console.log("Language", language);
 
   Astro.locals.site = site;
 
