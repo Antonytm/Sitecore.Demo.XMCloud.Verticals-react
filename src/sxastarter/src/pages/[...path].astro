@@ -12,7 +12,9 @@ import GraphQLRequestClientFactory from "../lib/graphql/graphql-request-client-f
 import { sitePrefixIdentifier } from "@/lib/constants";
 import { languages } from "../lib/languages";
 
-export const prerender = true;
+export const prerender = false;
+/*
+
 
 export async function getStaticPaths() {
   try {
@@ -50,6 +52,7 @@ export async function getStaticPaths() {
 
   return [];
 }
+*/
 
 export type SitecoreContextValue = LayoutServiceContext & {
   itemId?: string;
