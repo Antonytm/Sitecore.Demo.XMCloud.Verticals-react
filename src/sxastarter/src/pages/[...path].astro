@@ -90,6 +90,7 @@ try {
     Astro.locals.site || config.sitecoreSiteName
   );
   pageProps = await sitecorePagePropsFactory.create(cleanPath, language);
+  console.log("PageProps", pageProps);
 
   let scContext = pageProps.layoutData.sitecore.context as SitecoreContextValue;
   scContext.route = pageProps.layoutData.sitecore.route;
