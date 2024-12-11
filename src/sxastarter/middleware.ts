@@ -3,6 +3,7 @@ import config from './src/temp/config.vercel.js';
 import { languages } from './src/lib/languages.js';
 
 export default function middleware(request: Request) {
+  console.log('Is middleware working?');
   const url = new URL(request.url.toLowerCase());
 
   if (request.url.indexOf(".js") === -1
