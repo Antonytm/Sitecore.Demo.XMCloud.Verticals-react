@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
-import vercel from '@astrojs/vercel';
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,11 +13,11 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  output: 'server',
-  adapter: vercel(
+  output: "server",
+  adapter: vercel({
     isr: {
       // 5 minutes
       expiration: 60 * 5,
     },
-  ),
+  }),
 });
