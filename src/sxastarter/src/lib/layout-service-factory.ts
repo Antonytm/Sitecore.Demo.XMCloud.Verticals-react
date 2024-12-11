@@ -7,7 +7,7 @@ const { RestLayoutService, GraphQLLayoutService } = jss;
 export class LayoutServiceFactory {
   
   create(sitename?: string): LayoutService {
-    return config.fetchWith === 'GraphQL'
+    return true
       ? new GraphQLLayoutService({
         clientFactory,
         siteName: sitename || config.jssAppName || config.sitecoreSiteName,
