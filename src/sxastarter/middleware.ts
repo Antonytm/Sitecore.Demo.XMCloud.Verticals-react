@@ -38,6 +38,7 @@ export default function middleware(request: Request) {
       console.log('url.host:', url.host);
       if (url.host.startsWith(hostname)) {
         path = `/site_${site.name}${path}`;
+        console.log('REWRITE:', `${url.protocol}//${url.host}${path}`.toLowerCase());
         return rewrite(`${url.protocol}//${url.host}${path}`.toLowerCase());
       }
     }
