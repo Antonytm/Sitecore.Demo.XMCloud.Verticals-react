@@ -14,26 +14,21 @@ const { constants } = jss;
  */
 export class DictionaryServiceFactory {  
   create(): DictionaryService {
-    if(true){
-      const clientFactory = createGraphQLClientFactory();
-      
-      return new GraphQLDictionaryService({
-        siteName: config.jssAppName || config.sitecoreSiteName,
-        /*
-          The Dictionary Service needs a root item ID in order to fetch dictionary phrases for the current
-          app. If your Sitecore instance only has 1 JSS App, you can specify the root item ID here;
-          otherwise, the service will attempt to figure out the root item for the current JSS App using GraphQL and app name.
-        */
-        //rootItemId: '{08D9417D-5071-46FF-896B-EB76B0790526}',
-        cacheEnabled: false,
-        clientFactory
-      })
-    } else {
+    if(import.meta.env.FETCH_WITH === constants.FETCH_WITH.REST){
       return new RestDictionaryService({
         apiHost: config.sitecoreApiHost,
         apiKey: config.sitecoreApiKey,
         siteName: config.sitecoreSiteName,
       });
+    } else {
+      const clientFactory = createGraphQLClientFactory();
+      
+      return new GraphQLDictionaryService({
+        siteName: config.jssAppName || config.sitecoreSiteName,
+        cacheEnabled: false,
+        clientFactory
+      });
+      
     }
   }
 }
