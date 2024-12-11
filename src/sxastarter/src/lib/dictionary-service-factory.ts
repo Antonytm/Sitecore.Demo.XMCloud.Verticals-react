@@ -14,7 +14,7 @@ const { constants } = jss;
  */
 export class DictionaryServiceFactory {  
   create(): DictionaryService {
-    if(import.meta.env.FETCH_WITH === constants.FETCH_WITH.GRAPHQL){
+    if(true){
       const clientFactory = createGraphQLClientFactory();
       
       return new GraphQLDictionaryService({
