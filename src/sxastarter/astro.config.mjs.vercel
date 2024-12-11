@@ -14,5 +14,10 @@ export default defineConfig({
     port: 3000,
   },
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel(
+    isr: {
+      // 5 minutes
+      expiration: 60 * 5,
+    },
+  ),
 });
