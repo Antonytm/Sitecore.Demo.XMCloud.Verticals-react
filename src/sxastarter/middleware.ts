@@ -15,9 +15,9 @@ export default function middleware(request: Request) {
       "language": "en",
       "hostName": "deployment",
     }];
-
+    console.log('Sites:', sites);
     for (const site of sites) {
-
+      console.log('Site:', site);
       let path = url.pathname;
       let hasLanguage = false;
       for (const language of languages) {
@@ -34,6 +34,8 @@ export default function middleware(request: Request) {
       // Temporary fix for the issue above
       const hostname = site.hostName.replace("-basic", "-website");
 
+      console.log('Hostname:', hostname);
+      console.log('url.host:', url.host);
       if (url.host.startsWith(hostname)) {
         path = `/site_${site.name}${path}`;
         return rewrite(`${url.protocol}//${url.host}${path}`.toLowerCase());
