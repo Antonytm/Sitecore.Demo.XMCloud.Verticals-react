@@ -9,11 +9,7 @@ SharedFields:
   Value: ArticleDetails
 - ID: "069a8361-b1cd-437c-8c32-a3be78941446"
   Hint: Placeholders
-  Value: |
-    {C9D3A906-3697-4EEE-A431-B8FC8EB5A7F8}
-    {9953B06F-4247-4888-B2EF-9BF0CDC0B7A9}
-    {936BBB4A-6772-4DB5-A0EA-FABEE542EBA9}
-    {E390A922-CE56-4892-A8E7-4BE5592E6AD1}
+  Value: 
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: DemoIcons/32x32/article_details.png
@@ -66,7 +62,7 @@ Languages:
     Fields:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "21d85d48-b7a9-4388-aafe-746be1aa7c07"
+      Value: "42a3d005-b48f-4eb9-8b37-64a42ec18c60"
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
