@@ -1,5 +1,3 @@
-import "./switch-astro-config";
-
 /* GENERATE CONFIG */
 import "./generate-config";
 
